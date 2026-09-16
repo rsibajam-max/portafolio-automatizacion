@@ -25,8 +25,6 @@ cd "carpeta_de_trabajo"
 "ruta/al/R.exe" CMD BATCH "ruta/al/script.R"
 cd "ruta/al/archivo.Rout"
 ```
-Cierro bloque de código del .bat
-
 ## Configuración en el Programador de tareas
 
 1. Abrir el Programador de tareas de Windows.
