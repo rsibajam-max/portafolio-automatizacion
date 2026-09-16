@@ -13,7 +13,7 @@ El IMN publica los datos de cada estación en una tabla HTML, sin API, y mantien
 Script en R que:
 
 - Descarga la tabla HTML de la estación.
-- La limpia y reorganiza en 4 columnas (fecha, temp, lluvia, presión).
+- La limpia y reorganiza en columnas (fecha, temp, lluvia, y otras variables según la estación).
 - La acumula en un histórico propio en CSV.
 - Se ejecuta automáticamente todos los días vía `.bat` + Programador de tareas de Windows.
 
@@ -25,6 +25,7 @@ La fuente tiene varias complicaciones:
 - Cada estación tiene un número distinto de filas de encabezado/pie, por lo que las constantes `p` y `aux` están calibradas a mano.
 - Estaciones que entran o salen de operación, o cambian el número de variables que reportan.
 - El IMN no corrige datos, así que el histórico acumulado es responsabilidad del propio sistema.
+- El formato de salida del IMN es irregular: fechas con y sin segundos, filas corruptas y saltos horarios por caídas de la estación o del servicio.
 
 ## Herramientas
 
@@ -35,7 +36,7 @@ La fuente tiene varias complicaciones:
 ## Archivos
 
 - `scraping-laurel.R` — script completo, listo para correr.
-- `ejemplo-salida.csv` — muestra del histórico resultante (10 filas).
+- `ejemplo-salida.csv` — muestra del histórico resultante (10 filas, separador `,` y con encabezados para facilitar la lectura).
 
 ## Notas de diseño
 
