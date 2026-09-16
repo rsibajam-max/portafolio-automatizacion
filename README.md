@@ -6,6 +6,7 @@ Scripts de automatización en R para captura, procesamiento y respaldo de datos 
 
 - **[01 — Scraping de estaciones del IMN](01-scraping-imn/README.md)**: captura diaria de ~50 estaciones desde HTML, con histórico propio en CSV.
 - **[02 — Backup diario de históricos](02-backup-diario/README.md)**: copia de seguridad por fecha antes de cada corrida.
+- **[03 — Selección de estaciones por categoría](03-seleccionar-estaciones/README.md)**: copia un subconjunto de históricos según región, cuenca, cantón o provincia.
 
 ## Herramientas
 
