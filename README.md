@@ -8,6 +8,7 @@ Scripts de automatización en R para captura, procesamiento y respaldo de datos 
 - **[02 — Backup diario de históricos](02-backup-diario/README.md)**: copia de seguridad por fecha antes de cada corrida.
 - **[03 — Selección de estaciones por categoría](03-seleccionar-estaciones/README.md)**: copia un subconjunto de históricos según región, cuenca, cantón o provincia.
 - **[04 — Automatización diaria con .bat](04-automatizacion-bat/README.md)**: ejecución diaria de los scripts con el Programador de tareas de Windows.
+- **[05 — Resumen de variables por estación](05-resumen-estaciones/README.md)**: consolidado de totales y promedios por estación.
 
 ## Herramientas
 
