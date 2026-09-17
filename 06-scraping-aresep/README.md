@@ -38,23 +38,23 @@ La respuesta es JSON, con la estructura típica de OData:
 }
 ```
 ## Herramientas
-R: httr2 (HTTP moderno), purrr (iteración), dplyr (procesamiento).
+- R: httr2 (HTTP moderno), purrr (iteración), dplyr (procesamiento).
 
-##Cómo correrlo
-Ajustar el rango de años si es necesario (por defecto 2010-2026).
+## Cómo correrlo
+- Ajustar el rango de años si es necesario (por defecto 2010-2026).
 
-Ejecutar el script. Se descargan todos los años y se genera un CSV.
+- Ejecutar el script. Se descargan todos los años y se genera un CSV.
 
 ## Notas de diseño
-Uso de httr2: paquete moderno de R para HTTP, con sintaxis basada en pipes (|>).
+- Uso de httr2: paquete moderno de R para HTTP, con sintaxis basada en pipes (|>).
 
-map_dfr sobre los años: aplicación funcional de la función de descarga a cada año, combinando los resultados en un solo dataframe.
+- map_dfr sobre los años: aplicación funcional de la función de descarga a cada año, combinando los resultados en un solo dataframe.
 
-Frecuencia de actualización: ARESEP actualiza estos datos aproximadamente cada 3 meses, por lo que no es necesario correr el script con frecuencia.
+- Frecuencia de actualización: ARESEP actualiza estos datos aproximadamente cada 3 meses, por lo que no es necesario correr el script con frecuencia.
 
-Exportación en UTF-8: se usa write.csv2 con fileEncoding = "UTF-8" para preservar tildes y caracteres especiales de los datos.
+- Exportación en UTF-8: se usa write.csv2 con fileEncoding = "UTF-8" para preservar tildes y caracteres especiales de los datos.
 
 ## Contexto
-Este proyecto es independiente del sistema IMN. Los datos de ARESEP no tienen una ubicación geográfica asociada que permita ligarlos con las estaciones meteorológicas, así que sirven como dataset separado.
+- Este proyecto es independiente del sistema IMN. Los datos de ARESEP no tienen una ubicación geográfica asociada que permita ligarlos con las estaciones meteorológicas, así que sirven como dataset separado.
 
-El objetivo es mantener una copia local del histórico de ARESEP por si se necesita para análisis o para preservar datos que podrían desaparecer de la API.
+- El objetivo es mantener una copia local del histórico de ARESEP por si se necesita para análisis o para preservar datos que podrían desaparecer de la API.
