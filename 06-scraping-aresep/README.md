@@ -23,12 +23,24 @@ Script en R que:
 
 La API es del tipo OData, disponible en:
 https://datos.aresep.go.cr/ws.datosabiertos/Services/IA/AguaPotable.svc
+
+Cada año se consulta con la ruta:
+/ObtenerHistoricoMercado/{anio}
+
 La respuesta es JSON, con la estructura típica de OData:
 
+```json
+{
+  "value": [
+    { "campo1": "valor1", "campo2": "valor2" },
+    { "campo1": "valor1", "campo2": "valor2" }
+  ]
+}
+```
 ##Herramientas
 R: httr2 (HTTP moderno), purrr (iteración), dplyr (procesamiento).
 
-Cómo correrlo
+##Cómo correrlo
 Ajustar el rango de años si es necesario (por defecto 2010-2026).
 
 Ejecutar el script. Se descargan todos los años y se genera un CSV.
@@ -42,7 +54,7 @@ Frecuencia de actualización: ARESEP actualiza estos datos aproximadamente cada 
 
 Exportación en UTF-8: se usa write.csv2 con fileEncoding = "UTF-8" para preservar tildes y caracteres especiales de los datos.
 
-Contexto
+##Contexto
 Este proyecto es independiente del sistema IMN. Los datos de ARESEP no tienen una ubicación geográfica asociada que permita ligarlos con las estaciones meteorológicas, así que sirven como dataset separado.
 
 El objetivo es mantener una copia local del histórico de ARESEP por si se necesita para análisis o para preservar datos que podrían desaparecer de la API.
